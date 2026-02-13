@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitJam - Appeals Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="screen">
+    <div class="login-card">
+      <div class="login-logo">FitJam</div>
+      <h2>Appeals Admin Panel</h2>
+      <div class="form-group">
+        <label for="login-userid">User ID</label>
+        <input type="text" id="login-userid" placeholder="Your user ID">
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Admin password">
+      </div>
+      <button id="btn-login" class="btn btn-primary btn-full">Login</button>
+      <p id="login-error" class="error-text"></p>
+    </div>
+  </div>
+
+  <!-- MAIN DASHBOARD -->
+  <div id="dashboard-screen" class="screen hidden">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-logo">FitJam</span>
+        <span class="topbar-title">Appeals Admin</span>
+      </div>
+      <div class="topbar-right">
+        <button id="btn-refresh" class="btn btn-sm">Refresh</button>
+        <button id="btn-logout" class="btn btn-sm btn-danger">Logout</button>
+      </div>
+    </header>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-number" id="stat-pending">-</div>
+        <div class="stat-label">Pending Reports</div>
+      </div>
+      <div class="stat-card stat-orange">
+        <div class="stat-number" id="stat-appealed">-</div>
+        <div class="stat-label">Appeals</div>
+      </div>
+      <div class="stat-card stat-green">
+        <div class="stat-number" id="stat-resolved">-</div>
+        <div class="stat-label">Resolved Today</div>
+      </div>
+      <div class="stat-card stat-red">
+        <div class="stat-number" id="stat-banned">-</div>
+        <div class="stat-label">Banned Users</div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" data-tab="pending">Pending Reports</button>
+      <button class="tab" data-tab="appeals">Appeals</button>
+      <button class="tab" data-tab="resolved">Resolved</button>
+      <button class="tab" data-tab="banned">Banned Users</button>
+    </div>
+
+    <!-- REPORTS LIST -->
+    <div id="tab-pending" class="tab-content">
+      <div id="pending-list" class="report-list">
+        <div class="loading">Loading...</div>
+      </div>
+    </div>
+
+    <div id="tab-appeals" class="tab-content hidden">
+      <div id="appeals-list" class="report-list">
+        <div class="loading">Loading...</div>
+      </div>
+    </div>
+
+    <div id="tab-resolved" class="tab-content hidden">
+      <div id="resolved-list" class="report-list">
+        <div class="loading">Loading...</div>
+      </div>
+    </div>
+
+    <div id="tab-banned" class="tab-content hidden">
+      <div id="banned-list" class="report-list">
+        <div class="loading">Loading...</div>
+      </div>
+    </div>
+
+    <!-- DETAIL MODAL -->
+    <div id="detail-modal" class="modal hidden">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+        <div id="modal-body">
+          <div class="loading">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
